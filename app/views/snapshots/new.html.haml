@@ -1,0 +1,33 @@
+%h1 Take a snapshot of this moment
+
+= form_for [@graph, @snapshot] do |f|
+  .snapshot_form
+    %table
+      %tr.primary
+        %th= f.label :calmness
+        %td= f.text_field :calmness
+      %tr.primary
+        %th= f.label :happiness
+        %td= f.text_field :happiness
+
+      %tr.exercise
+        %th= f.label :exercise
+        %td= f.text_field :exercise
+      %tr.exercise
+        %th= f.label :exercise_min
+        %td= f.text_field :exercise_min
+
+      / haven't added to schema yet
+      / %tr
+      /   %th= f.label :exercise_type
+      /   %td= f.text_field :exercise_type
+
+      %tr.body
+        %th= f.label :weight
+        %td= f.text_field :weight
+      %tr.body
+        %th= f.label :body_fat
+        %td= f.text_field :body_fat
+
+    %div
+      =f.submit :class => 'snapshot_submit_button'

@@ -1,0 +1,5 @@
+%h1
+  = current_user.name
+  Tracker
+
+= link_to 'create a new snapshot', new_graph_snapshot_path(@graph)#, :method => :get

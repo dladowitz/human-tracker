@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  calmness: 1
+  happiness: 
+  exercise: false
+  exercise_min: 
+  weight: 1.5
+  body_fat: 1.5
+
+two:
+  calmness: 1
+  happiness: 
+  exercise: false
+  exercise_min: 
+  weight: 1.5
+  body_fat: 1.5
