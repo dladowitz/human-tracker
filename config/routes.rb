@@ -2,7 +2,7 @@ HumanTracker::Application.routes.draw do
 
   root to: 'graphs#show'
 
-  devise_for :users, :controllers => { :sessions => "sessions" }
+  devise_for :users
 
   resources :users do
     resource :graph do
