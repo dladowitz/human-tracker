@@ -2,8 +2,7 @@
   = current_user.name
   Tracker
 
-  = current_user.graph.id
-= button_to 'create a new snapshot', "/profiles/#{current_user.id}/graph/snapshots/new", :method => :get, :class => 'create_snapshot_button'
+= button_to 'create a new snapshot', "/users/#{current_user.id}/graph/snapshots/new", :method => :get, :class => 'create_snapshot_button'
 
 %table
   - current_user.snapshots.each do |snapshot|
@@ -14,3 +13,14 @@
       %td= snapshot.exercise_min
       %td= snapshot.weight
       %td= snapshot.body_fat
+
+  %br
+  user.id
+  = current_user.id
+- if current_user.graph
+  %br
+  user.graph.id
+  = current_user.graph.id
+
+-else
+  Yo, someone fogot to create you a graph

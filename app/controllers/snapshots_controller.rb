@@ -1,5 +1,6 @@
 class SnapshotsController < ApplicationController
   def new
+    @user = User.find(current_user.id)
     @graph = current_user.graph
     @snapshot = Snapshot.new
   end
@@ -8,7 +9,7 @@ class SnapshotsController < ApplicationController
       @snapshot = Snapshot.new(snapshot_params)
 
       if @snapshot.save
-        redirect_to "/profiles/#{current_user.id}/graph"
+        redirect_to "/users/#{current_user.id}/graph"
       else
         render :new
       end

@@ -1,7 +1,7 @@
 %h1 Take a snapshot of this moment
 
-= form_for [current_user, @graph, @snapshot] do |f|
-  = f.hidden_field :graph_id, value: current_user.graph.id
+= form_for [@user, @graph, @snapshot] do |f|
+  = f.hidden_field :graph_id, value: current_user.graph.id if current_user.graph
   .snapshot_form
     .primary
       %table

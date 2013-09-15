@@ -7,4 +7,15 @@ class User < ActiveRecord::Base
   has_one :graph
   has_many :snapshots, :through => :graph
 
+
+  #not working. fuck you.
+  # after_create :create_graph
+
+
+  # private
+
+  # def create_graph
+  #   create_graph
+  # end
+
 end
