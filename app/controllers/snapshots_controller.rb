@@ -8,7 +8,7 @@ class SnapshotsController < ApplicationController
       @snapshot = Snapshot.new(snapshot_params)
 
       if @snapshot.save
-        redirect_to "/users/#{current_user.id}/graph"
+        redirect_to "/profiles/#{current_user.id}/graph"
       else
         render :new
       end

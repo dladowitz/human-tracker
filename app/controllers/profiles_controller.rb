@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
   def show
-    @user = current_user
+    @profile= current_user
   end
 
   def index
-    @users = User.all
+    @profiles = User.all
   end
 end

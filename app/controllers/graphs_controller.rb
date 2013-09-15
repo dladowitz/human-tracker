@@ -16,7 +16,7 @@ class GraphsController < ApplicationController
   end
 
   def show
-    @user = current_user
+    @profile = current_user
     @graph = current_user.graph
   end
 

@@ -4,7 +4,7 @@ HumanTracker::Application.routes.draw do
 
   devise_for :users
 
-  resources :users do
+  resources :profiles do
     resource :graph do
       resources :snapshots
     end
