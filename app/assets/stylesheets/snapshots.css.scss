@@ -2,16 +2,65 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+ // Variables
+$large_button_background: linear-gradient(rgb(175, 202, 125) 20%, rgb(153, 187, 89)), none;
+$large_button_background_hover: linear-gradient(rgb(200, 227, 150) 20%, rgb(172, 200, 104)), none;
+$site_green: rgba(114, 138, 66, .15);
+
+// Mixins
+@mixin green_button {
+  background-image: linear-gradient(rgb(175, 202, 125) 20%, rgb(153, 187, 89)), none;
+  color: #EDEFEE;
+  border-radius: 5px;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, .5);
+  border: 1px solid #738C42;
+  padding: 10px;
+}
+
+@mixin green_button_hover {
+  background-image: linear-gradient(rgb(200, 227, 150) 20%, rgb(172, 200, 104)), none;
+}
+
+@mixin site_border {
+  border-radius: 5px;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, .5);
+  border: 1px solid gray;
+  padding: 10px;
+}
+
+// Sass
 
 .snapshot_form {
   text-align: left;
-  // background-color: green;
+  width: 275px;
+}
+
+.snapshot_form input{
+  // float: right;
+}
+
+.snapshot_form th {
+  width: 100px;
+}
+.snapshot_form td {
 }
 
 .snapshot_form .primary {
-  // background-color: blue;
+  margin-bottom: 10px;
+  @include site_border
 }
 
-.snapshot_form .exercise th {
-  padding-top: 40px;
+.snapshot_form .exercise {
+  margin-bottom: 10px;
+  @include site_border
+}
+
+.snapshot_form .body {
+  margin-bottom: 10px;
+  @include site_border
+}
+
+.snapshot_form .snapshot_submit_button {
+  @include green_button;
+  text-size: 20px;
 }

@@ -1,6 +1,6 @@
 class SnapshotsController < ApplicationController
   def new
-    @graph = Graph.find(params[:graph_id])
+    @graph = current_user.graph
     @snapshot = Snapshot.new
   end
 
@@ -8,7 +8,7 @@ class SnapshotsController < ApplicationController
       @snapshot = Snapshot.new(snapshot_params)
 
       if @snapshot.save
-        redirect_to :back
+        redirect_to "/users/#{current_user.id}/graph"
       else
         render :new
       end
@@ -32,6 +32,6 @@ class SnapshotsController < ApplicationController
 
   private
     def snapshot_params
-      params.require(:snapshot).permit(:calmness, :happiness)
+      params.require(:snapshot).permit(:calmness, :happiness, :exercise, :exercise_min, :weight, :body_fat, :graph_id)
     end
 end

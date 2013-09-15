@@ -1,33 +1,43 @@
 %h1 Take a snapshot of this moment
 
-= form_for [@graph, @snapshot] do |f|
+= form_for [current_user, @graph, @snapshot] do |f|
+  = f.hidden_field :graph_id, value: current_user.graph.id
   .snapshot_form
-    %table
-      %tr.primary
-        %th= f.label :calmness
-        %td= f.text_field :calmness
-      %tr.primary
-        %th= f.label :happiness
-        %td= f.text_field :happiness
+    .primary
+      %table
+        %tr
+          %th= f.label :calmness
+          %td= f.text_field :calmness
 
-      %tr.exercise
-        %th= f.label :exercise
-        %td= f.text_field :exercise
-      %tr.exercise
-        %th= f.label :exercise_min
-        %td= f.text_field :exercise_min
+          %tr
+            %th= f.label :happiness
+            %td= f.text_field :happiness
+    .exercise
+      %table
+        %tr
+          %th= f.label :exercise
+          %td= f.text_field :exercise
 
-      / haven't added to schema yet
-      / %tr
-      /   %th= f.label :exercise_type
-      /   %td= f.text_field :exercise_type
+        %tr
+          %th= f.label :exercise_min
+          %td= f.text_field :exercise_min
 
-      %tr.body
-        %th= f.label :weight
-        %td= f.text_field :weight
-      %tr.body
-        %th= f.label :body_fat
-        %td= f.text_field :body_fat
+        /haven't added to schema yet
+        / %tr
+        /   %th= f.label :exercise_type
+        /   %td= f.text_field :exercise_type
+
+    .body
+      %table
+        %tr
+          %th= f.label :weight
+          %td= f.text_field :weight
+
+        %tr
+          %th= f.label :body_fat
+          %td= f.text_field :body_fat
+
+
 
     %div
       =f.submit :class => 'snapshot_submit_button'

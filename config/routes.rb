@@ -1,19 +1,13 @@
 HumanTracker::Application.routes.draw do
 
-  get "snapshots/new"
-  get "snapshots/create"
-  get "snapshots/edit"
-  get "snapshots/update"
-  get "snapshots/index"
-  get "snapshots/show"
-  get "snapshots/destroy"
-  root to: 'graphs#index'
+  root to: 'graphs#show'
 
-  devise_for :users
+  devise_for :users, :controllers => { :sessions => "sessions" }
 
-
-  resources :graphs do
-    resources :snapshots
+  resources :users do
+    resource :graph do
+      resources :snapshots
+    end
   end
 
 

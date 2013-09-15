@@ -2,4 +2,15 @@
   = current_user.name
   Tracker
 
-= link_to 'create a new snapshot', new_graph_snapshot_path(@graph)#, :method => :get
+  = current_user.graph.id
+= button_to 'create a new snapshot', "/users/#{current_user.id}/graph/snapshots/new", :method => :get, :class => 'create_snapshot_button'
+
+%table
+  - current_user.snapshots.each do |snapshot|
+    %tr
+      %td= snapshot.calmness
+      %td= snapshot.happiness
+      %td= snapshot.exercise
+      %td= snapshot.exercise_min
+      %td= snapshot.weight
+      %td= snapshot.body_fat

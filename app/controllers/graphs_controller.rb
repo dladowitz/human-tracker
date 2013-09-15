@@ -16,7 +16,8 @@ class GraphsController < ApplicationController
   end
 
   def show
-    @graph = Graph.find(params[:id])
+    @user = current_user
+    @graph = current_user.graph
   end
 
   def update
