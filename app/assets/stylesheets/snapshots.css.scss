@@ -60,6 +60,11 @@ $site_green: rgba(114, 138, 66, .15);
   @include site_border
 }
 
+.snapshot_form .notes {
+  margin-bottom: 10px;
+  @include site_border
+}
+
 .snapshot_form .snapshot_submit_button {
   @include green_button;
   text-size: 20px;

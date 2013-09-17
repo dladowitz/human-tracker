@@ -33,6 +33,6 @@ class SnapshotsController < ApplicationController
 
   private
     def snapshot_params
-      params.require(:snapshot).permit(:calmness, :happiness, :exercise, :exercise_min, :weight, :body_fat, :graph_id)
+      params.require(:snapshot).permit(:graph_id, :calmness, :happiness, :exercise, :exercise_min, :weight, :body_fat, :notes)
     end
 end
