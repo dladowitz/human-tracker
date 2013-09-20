@@ -17,5 +17,6 @@ class User < ActiveRecord::Base
   # def create_graph
   #   create_graph
   # end
+  #
 
 end
